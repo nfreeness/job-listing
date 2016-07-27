@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-    @jobs =Job.all
+    @jobs = Job.all.recent
   end
 
   def new
@@ -21,6 +21,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
   end
 
   def edit
