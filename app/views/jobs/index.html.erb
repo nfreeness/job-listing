@@ -7,7 +7,8 @@
       <tr>
         <td>$</td>
         <td>Title</td>
-        <td>Description</td>
+        <td></td>
+        <td>Last Update</td>
       </tr>
     </thead>
     <tbody>
@@ -15,12 +16,12 @@
       <tr>
         <td>$</td>
         <td><%= link_to(job.title, job_path(job)) %></td>
-        <td><%= job.description %></td>
         <td>
           <%= link_to("Edit",edit_job_path(job), class: "btn btn-sm btn-default")%>
           <%= link_to("Delete",job_path(job),     class: "btn btn-sm btn-default",
                       method: :delete, data: {confirm: "Are you sure?"})%>
         </td>
+      <td><%= job.updated_at %></td>
       </tr>
       <% end %>
     </tbody>
